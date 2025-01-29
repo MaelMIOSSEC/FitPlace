@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Mon Projet">
+    <meta name="author" content="Nom Prénom">
+    <meta name="keywords" content="Projet, L1 ISI, Brest">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\css\Style.css" type="text/css">
+    <script src="../JavaScript/Projet.js"></script>
+    <title>Ma 1ère page HTML !</title>
+</head>
+
+<body>
+    <div id="global"></div>
+    <div id="haut-de-page">
+        <div id="haut-gauche">
+            <img src="../img/Logo_image-removebg-preview.png" width="150px">
+        </div>
+        <div id="haut-droit">
+            <h1>FitPlace</h1>
+        </div>
+    </div>
+    <div class="carousel-container">
+        <img src="../img/SlideA.jpg" alt="Image 1" class="carousel-img active" />
+        <img src="../img/SlideB.jpg" alt="Image 2" class="carousel-img" />
+        <img src="../img/SlideC.jpg" alt="Image 3" class="carousel-img" />
+        <div class="carousel-btn carousel-btn-1" onclick="changeImage(1)">1</div>
+        <div class="carousel-btn carousel-btn-2" onclick="changeImage(2)">2</div>
+        <div class="carousel-btn carousel-btn-3" onclick="changeImage(3)">3</div>
+    </div>
+
+    <hr>
+    <div id="navigation">
+        <ul id="navigation ul">
+            <li><button class="button" onclick="window.location.href = 'index.html'">Accueil</button></li>
+            <li><button class="button" onclick="window.location.href = 'Exercices.html';">Exercices</button>
+            </li>
+            <li><button class="button">Nutrition</button></li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div id="container">
+        <div id="milieux-droit">
+            <U>
+                <h3>Que faut-il manger en musculation ?</h3>
+            </U>
+            <h4>Des sources de protéines de qualité supérieure pour la musculation :</h4>
+            <ul>
+                <li>Produits laitiers pauvres en matière grasse (fromage blanc, fromage, yaourt)</li>
+                <li>Viandes maigres (bœuf, poulet, dinde)</li>
+                <li>Poisson (saumon, maquereau, hareng)</li>
+                <li>Lentilles rouges, haricots rouges, petits pois, quinoa, pois chiches, soja</li>
+            </ul>
+            <h4>Des sources de lipides de qualité supérieure pour la musculation :</h4>
+            <ul>
+                <li>Huiles (huile de noisette, huile de noix, huile de noix de coco, huile d'olive)</li>
+                <li>Avocats, graines de lin, graines de tournesol</li>
+                <li>Noix (amandes, noix du Brésil, noix de cajou, pistaches, etc.)</li>
+            </ul>
+            <h4>Des sources de glucides de qualité supérieure pour la musculation :</h4>
+            <ul>
+                <li>Produits complets (riz complet, pâtes complètes)</li>
+                <li>Flocons d'avoine, flocons d'épeautre</li>
+                <li>Quinoa, amarante</li>
+                <li>Galettes de riz</li>
+            </ul>
+        </div>
+        <div id="milieux-gauche">
+            <div id="calculateur">
+                <U>
+                    <h3> Calculateur de calories : </h3>
+                </U>
+                <label>Sexe :
+                    <select id="sexe">
+                        <option value="selectionner">- Sélectionner -</option>
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                    </select>
+                </label>
+                <br>
+                <label>Poids (kg) :
+                    <input type="number" id="poids" required>
+                </label>
+                <br>
+                <label>Taille (cm) :
+                    <input type="number" id="taille" required>
+                </label>
+                <br>
+                <label>Age :
+                    <input type="number" id="age" required>
+                </label>
+                <br>
+                <label>Niveau d'activité :
+                    <select id="activite">
+                        <option value="selectionner">- Sélectionner -</option>
+                        <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
+                        <option value="modere">Modéré (exercice léger 1 à 3 jours/semaine)</option>
+                        <option value="actif">Actif (exercice modéré 3 à 5 jours/semaine)</option>
+                        <option value="tresactif">Très actif (exercice intense 6 à 7 jours/semaine)</option>
+                    </select>
+                </label>
+                <br>
+                <button class="button_nutrition" onclick="calculer()">Calculer</button>
+                <br>
+                <br>
+                <label>Votre besoin calorique est de :</label>
+                <input type="text" id="resultat" style="text-align:center;" readonly>
+            </div>
+        </div>
+        <script>
+            function calculer() {
+                var sexe = document.getElementById("sexe").value;
+                var poids = document.getElementById("poids").value;
+                var taille = document.getElementById("taille").value;
+                var age = document.getElementById("age").value;
+                var activite = document.getElementById("activite").value;
+
+                if (sexe === "homme") {
+                    var besoin = (13.7 * poids) + (5 * taille) - (6.8 * age) + 66;
+                } else if (sexe === "femme") {
+                    var besoin = (9.6 * poids) + (1.8 * taille) - (4.7 * age) + 655;
+                }
+
+                if (activite === "sedentaire") {
+                    besoin *= 1.2;
+                } else if (activite === "modere") {
+                    besoin *= 1.375;
+                } else if (activite === "actif") {
+                    besoin *= 1.55;
+                } else if (activite === "tresactif") {
+                    besoin *= 1.725;
+                }
+
+                document.getElementById("resultat").value = Math.round(besoin) + " calories par jours.";
+            }
+
+            var images = document.querySelectorAll(".carousel-img");
+            var index = 0;
+
+            // Défilement automatique des images toutes les 2 secondes
+            setInterval(function () {
+                index = (index + 1) % images.length;
+                changeImage(index + 1);
+            }, 2000);
+
+            // Fonction pour changer l'image active
+            function changeImage(index) {
+                // Désactive toutes les images
+                images.forEach(function (image) {
+                  image.classList.remove("active");
+            });
+
+                // Active l'image correspondant à l'index passé en paramètre
+                var image = images[index - 1];
+                image.classList.add("active");
+
+                // Met à jour l'index pour le défilement automatique
+                index = index - 1;
+            }
+        </script>
+    </div>
+    <U>
+        <h3>Exemple d'alimentation étendu sur une journée (pour une personne ayant besoin de 3200 kcal pour la
+            musculation):</h3>
+    </U>
+    <table border="1">
+        <tr>
+            <td id="gris">
+                <center>
+                    <U>
+                        <p>Petit Déjeuner</p>
+                    </U>
+                    <p>(398 kcal : lipides 13,3 g, glucides 38,5 g, protéines 26,8 g)</p>
+                </center>
+            </td>
+            <td id="gris">
+                <center>
+                    <U>
+                        <p>Déjeuner</p>
+                    </U>
+                    <p>(588 kcal : lipides 21,5 g, glucides 43,4 g, protéines 54 g)</p>
+                </center>
+            </td>
+            <td id="gris">
+                <center>
+                    <U>
+                        <p>Collations/Encas</p>
+                    </U>
+                    <p>(500 à 600 kcal)</p>
+                </center>
+            </td>
+            <td id="gris">
+                <center>
+                    <U>
+                        <p>Dîner</p>
+                    </U>
+                    <p>(566 kcal: lipides 5 g, glucides 80,2 g, protéines 57,8 g)</p>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul div="centrer">
+                    <li>2 tranches de pain complet</li>
+                    <li>70 g de gouda</li>
+                    <li>4 tranches de concombre</li>
+                </ul>
+            </td>
+            <td>
+                <ul div="centrer">
+                    <li>200 g de filet de saumon</li>
+                    <li>150 g de riz brun</li>
+                    <li>150 g d'épinards</li>
+                </ul>
+            </td>
+            <td>
+                <ul div="centrer">
+                    <li>Galettes de riz avec un peu de miel</li>
+                    <li>Fruit et/ou salade de fruit</li>
+                    <li>Mélange de fruits secs / amandes / noix de cajou</li>
+                    <li>Barre protéinée</li>
+                    <li>Shake protéiné</li>
+                </ul>
+            </td>
+            <td>
+                <ul div="centrer">
+                    <li>300 g de patates douces</li>
+                    <li>200 g de filet de poulet</li>
+                    <li>200 g de légumes (brocoli, carottes, chou-fleur)</li>
+                </ul>
+            </td>
+        </tr>
+        </div>
+</body>
+
+</html>

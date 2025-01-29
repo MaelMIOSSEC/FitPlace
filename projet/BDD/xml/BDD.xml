@@ -1,0 +1,13 @@
+
+<LIBRARY>
+	<USER>
+		<ID>1</ID>
+		<USERNAME>MaelMiossec</USERNAME>
+		<PASSWORD>MOTDEPASSE</PASSWORD>
+		<FIRSTNAME>Mael</FIRSTNAME>
+		<LASTNAME>Miossec</LASTNAME>
+		<ADDRESS>8 Rue Pierre Loti</ADDRESS>
+		<ZIPCODE>29800</ZIPCODE>
+		<MAIL>mael.miossec@etudiant.univ-brest.fr</MAIL>
+	</USER>
+</LIBRARY>

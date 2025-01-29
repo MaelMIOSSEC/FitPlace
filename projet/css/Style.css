@@ -1,0 +1,541 @@
+html {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+body {
+  color: black;
+  background-color: lightgrey;
+  background-size: cover;
+  font-size: 18pt;
+  display: flex;
+  flex-direction: column;
+  /*L'axe principal: vertical, l'axe secondaire: horizontal*/
+  align-items: center;
+  /*Alignement: center sur l'axe SECONDAIRE*/
+}
+
+h1 {
+  border-radius: 20px;
+  padding: 2px 50px;
+  color: grey;
+  border: 5px solid;
+  font-style: oblique;
+  font-size: 50pt;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-variant: small-caps;
+  font-size: 25pt;
+}
+
+p {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 18pt;
+}
+
+#global {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  clear: both;
+}
+
+/*Styliser les liens HyperTexte en haut de page*/
+#navigation {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#navigation ul {
+  border: 1;
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+#liste-navigation li {
+  border: 1;
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  display: inline;
+  font-family: "permanent_markerregular";
+  padding-left: 100px;
+  border: 10px;
+}
+
+.button {
+  padding: 0 140px;
+  font-size: 4rem;
+  width: 100%;
+  height: 100%;
+  font-family: "pacifico", cursive;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  text-shadow: 0px -2px white;
+  transition: all 0.1s;
+  float: left;
+  text-decoration: none;
+  text-align: center;
+  color: lightgrey;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: grey;
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.button:hover {
+  background-color: white;
+}
+
+.button:active {
+  transform: translate(0, 5px);
+  border-bottom: 1px solid;
+  background: grey;
+  color: black;
+}
+
+/*Styliser les tableaux*/
+
+table {
+  border: medium solid;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border: 4px solid black;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+#gris {
+  letter-spacing: 1px;
+  background-color: grey;
+}
+
+#gris-clair {
+  font-size: 4em;
+  letter-spacing: 1px;
+  color: #000;
+  background-color: lightgrey;
+}
+
+tbody td {
+  text-align: center;
+}
+
+.image {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.image:hover {
+  border: 2px solid #000000;
+  box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Styliser l'organisation de l'accueil*/
+
+#haut-de-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+#haut-droit {
+  margin-left: 30%;
+}
+
+#haut-gauche {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid;
+  border-radius: 50px;
+  background-color: white;
+}
+
+#container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#milieux-droit {
+  width: 200%;
+  height: 740px;
+  margin: 10px;
+  border: 5px solid;
+  float: left;
+  text-align: center;
+  border-radius: 50px;
+  background: grey;
+}
+
+#milieux-gauche {
+  width: 200%;
+  height: 740px;
+  margin: 10px;
+  border: 5px solid;
+  float: right;
+  text-align: center;
+  border-radius: 50px;
+  background: grey;
+}
+
+#bas-de-page {
+  margin: 10px;
+  text-align: center;
+  border: 5px solid;
+  border-radius: 50px;
+  background: grey;
+}
+
+/* Styliser l'oragnisation de la page nutrition*/
+
+#milieux {
+  margin: 10px;
+  border: 5px solid;
+  border-radius: 50px;
+  background: grey;
+}
+
+/* Styliser le carousel */
+
+/* Styles pour les images du carrousel */
+.carousel-img {
+  display: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles pour les boutons du carrousel */
+.carousel-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Styles pour le conteneur du carrousel */
+.carousel-container {
+  position: relative;
+  max-width: 1800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Styles pour l'image active */
+.carousel-img.active {
+  display: block;
+}
+
+/* Styles pour les boutons qui apparaissent au survol */
+.carousel-container:hover .carousel-btn {
+  display: block;
+}
+
+/* Styles pour les boutons du carrousel */
+.carousel-btn-1 {
+  left: 10px;
+}
+
+.carousel-btn-2 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-btn-3 {
+  right: 10px;
+}
+
+ul {
+  display: inline-block;
+  margin: auto;
+  text-align: left;
+}
+
+/*améliorer le diaporama sur ma page d'accueil*/
+#diapo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#diapo button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#ex2 {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.sliderA {
+  width: 1800px;
+  overflow: hidden;
+  margin: 25px auto;
+}
+
+#slidesA {
+  width: calc(1800px * 3);
+  animation: glisse 10s infinite;
+}
+
+#control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 260px;
+}
+
+.newbutton {
+  filter: blur(1.5px);
+  font-size: 25px;
+  width: 290px;
+  height: 175px;
+  font-family: "pacifico", cursive;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  text-shadow: 0px -2px white;
+  transition: all 0.1s;
+  float: left;
+  text-decoration: none;
+  text-align: center;
+  color: lightgrey;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: grey;
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.slider1 {
+  width: 1200px;
+  overflow: hidden;
+  margin: 25px auto;
+}
+
+.slides1 {
+  width: calc(1200px * 3);
+  animation: glisse1 10s infinite;
+}
+
+.slide1 {
+  float: left;
+}
+
+#test {
+  height: 250px;
+  width: 1250px;
+  background-color: grey;
+  border-radius: 50px;
+  border: 5px solid;
+}
+
+.calculateur {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="number"] {
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button_nutrition {
+  margin-top: 10px;
+  padding: 5px 25px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 25%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 10%;
+  height: 50%;
+  background-color: grey;
+  border-style: none;
+}
+
+/*CSS de mon animation déplacement d'objet.*/
+
+.container {
+  text-align: center;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 2px solid black;
+}
+
+.ball {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: ball 2s ease-in-out infinite;
+}
+
+.head {
+  position: absolute;
+  top: 250px;
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.body {
+  position: absolute;
+  top: 275px;
+  left: 35%;
+  width: 180px;
+  height: 5px;
+  background-color: black;
+}
+
+.bar {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  width: 5px;
+  height: 75px;
+  background-color: black;
+  transform: translateX(-50%);
+  animation: bar 2s ease-in-out infinite;
+}
+
+.foot {
+  position: absolute;
+  top: 275px;
+  left: 80%;
+  width: 5px;
+  height: 75px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.foot1 {
+  position: absolute;
+  top: 300px;
+  left: 73%;
+  width: 5px;
+  height: 75px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.foot2 {
+  position: absolute;
+  top: 300px;
+  left: 28%;
+  width: 5px;
+  height: 75px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.bar2 {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  width: 180px;
+  height: 5px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+@keyframes ball {
+  0% {
+    transform: translateX(-50%) translateY(125px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(175px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(125px);
+  }
+}
+
+@keyframes bar {
+  0% {
+    transform: translateX(-50%) translateY(125px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(175px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(125px);
+  }
+}

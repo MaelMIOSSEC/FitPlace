@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+
+    <style>
+      body {
+        color: black;
+        background-color: lightgrey;
+        background-size: cover;
+        font-size: 18pt;
+        display: flex;
+        flex-direction: column;
+        /*L'axe principal: vertical, l'axe secondaire: horizontal*/
+        align-items: center;
+        /*Alignement: center sur l'axe SECONDAIRE*/
+      }
+
+      h1 {
+        margin-left: 70px;
+        border-radius: 20px;
+        padding: 2px 50px;
+        color: black;
+        border: 5px solid;
+        font-style: oblique;
+        font-size: 50pt;
+        text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      table td label {
+        float: left;
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+      }
+
+      table td input,
+      select,
+      span {
+        float: left;
+        margin-bottom: 5px;
+      }
+
+      table td textarea {
+        float: left;
+        width: 350px;
+        height: 150px;
+      }
+
+      #form1 {
+        text-align: center;
+        height: 550px;
+        width: 550px;
+        margin: auto;
+        border: 5px solid;
+        border-radius: 50px;
+        background: grey;
+      }
+
+      input[type="text"] {
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="password"] {
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      [type="submit"] {
+        margin: 20px 0 0 20px;
+      }
+
+      [type="button"] {
+        margin: 20px 0 0 20px;
+      }
+
+      #btnSubmit {
+        margin-top: 15px;
+        padding: 7px 25px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
+      #btnClear {
+        margin-top: 15px;
+        padding: 7px 25px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
+      p {
+        margin-left: 70px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        var username = document.getElementById("txtUsername").value;
+        var password = document.getElementById("txtPassword").value;
+        var firstname = document.getElementById("txtFirstName").value;
+        var lastname = document.getElementById("txtLastName").value;
+        var address = document.getElementById("txtAddress").value;
+        var zipcode = document.getElementById("txtZIPCode").value;
+        var email = document.getElementById("txtEmail").value;
+        if (username.length < 7 || username.length > 12) {
+          alert(
+            "Le nom d'utilisateur est obligatoire et doit comporter entre 7 et 12 caractères."
+          );
+          return false;
+        }
+        if (password.length < 7 || password.length > 12) {
+          alert(
+            "Le mot de passe est obligatoire et doit comporter entre 7 et 12 caractères."
+          );
+          return false;
+        }
+        if (!/^[A-Za-z]+$/.test(firstname)) {
+          alert(
+            "Le prénom est obligatoire et ne doit contenir que des caractères alphabétiques."
+          );
+          return false;
+        }
+        if (!/^[A-Za-z]+$/.test(lastname)) {
+          alert(
+            "Le nom est obligatoire et ne doit contenir que des caractères alphabétiques."
+          );
+          return false;
+        }
+        if (!/^[0-9]+$/.test(zipcode)) {
+          alert(
+            "Le code postal est obligatoire et ne doit contenir que des caractères numériques."
+          );
+          return false;
+        }
+        if (!/^[0-9a-zA-Z-\s]+$/.test(address)) {
+          alert(
+            "L'adresse est obligatoire et ne doit contenir que des caractères alphanumériques."
+          );
+          return false;
+        } else if (/^[\s]+$/.test(address)) {
+          alert(
+            "L'adresse est obligatoire et ne peut pas contenir que des espaces."
+          );
+        }
+        if (
+          email == "" ||
+          !/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/.test(email)
+        ) {
+          alert("Le mail est obligatoire et n'est pas valide.");
+          return false;
+        } else {
+          alert(
+            "\nNom d'utilisateur : " +
+              username +
+              "\nMot de passe : " +
+              password +
+              "\nPrénom : " +
+              firstname +
+              "\nNom de famille : " +
+              lastname +
+              "\nAdresse : " +
+              address +
+              "\nCode postal : " +
+              zipcode +
+              "\nEmail : " +
+              email
+          );
+          window.location.href = "page/index.html";
+        }
+        return true;
+      }
+
+      function clearForm() {
+        document.getElementById("txtUsername").value = "";
+        document.getElementById("txtPassword").value = "";
+        document.getElementById("txtFirstName").value = "";
+        document.getElementById("txtLastName").value = "";
+        document.getElementById("txtAddress").value = "";
+        document.getElementById("txtZIPCode").value = "";
+        document.getElementById("txtEmail").value = "";
+        document.getElementsByName("gender").forEach(function (elem) {
+          elem.checked = false;
+        });
+        document.getElementById("About").value = "";
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Formulaire d'inscription</h1>
+    <br />
+    <br />
+    <form id="form1">
+      <table>
+        <tr>
+          <td><label for="username">Nom d'utilisateur:</label></td>
+          <td><input type="text" id="txtUsername" size="12" required /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Mot de passe:</label></td>
+          <td><input type="password" id="txtPassword" size="12" required /></td>
+        </tr>
+        <tr>
+          <td><label for="firstname">Prénom:</label></td>
+          <td><input type="text" id="txtFirstName" size="45" required /></td>
+        </tr>
+        <tr>
+          <td><label for="lastname">Nom de Famille:</label></td>
+          <td><input type="text" id="txtLastName" size="45" required /></td>
+        </tr>
+        <tr>
+          <td><label for="address">Adresse:</label></td>
+          <td><input type="text" id="txtAddress" size="45" required /></td>
+        </tr>
+        <tr>
+          <td><label for="zipcode">Code Postal:</label></td>
+          <td><input type="text" id="txtZIPCode" size="15" required /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="text" id="txtEmail" size="45" required /></td>
+        </tr>
+        <tr>
+          <td><label for="gender">Genre:</label></td>
+          <td>
+            <input type="radio" name="gender" value="male" required />
+            <span>Homme</span>
+            <input type="radio" name="gender" value="female" required />
+            <span>Femme</span>
+            <input type="radio" name="gender" value="other" required />
+            <span>Autre</span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="about">A propos :</label></td>
+          <td><textarea id="About" name="about" required></textarea></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="button"
+              id="btnSubmit"
+              value="Register"
+              onclick="validateForm()"
+            />
+            <input
+              type="button"
+              id="btnClear"
+              value="Clear"
+              onclick="clearForm()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>BDD XML</title>
+
+    <style>
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 5px;
+      }
+    </style>
+
+    <script src="script/BDD.js"></script>
+  </head>
+
+  <body>
+    <button type="button" onclick="loadXMLDoc()">Mes Inscriptions</button>
+    <button type="button" onclick="addForm()">Ajouter</button>
+    <button type="button" onclick="saveForm()" id="btnSave">Sauvegarder</button>
+    <br /><br />
+    <table id="data"></table>
+
+    <br />
+    <br />
+    <table id="tblBook" style="display: none">
+      <tr>
+        <td>Nom d'utilisateur</td>
+        <td><input type="text" size="50" id="txtUsername" /></td>
+      </tr>
+      <tr>
+        <td>Mot de Passe</td>
+        <td><input type="text" size="50" id="txtPassword" /></td>
+      </tr>
+      <tr>
+        <td>Prénom</td>
+        <td><input type="text" size="50" id="txtFirstname" /></td>
+      </tr>
+      <tr>
+        <td>Nom de Famille</td>
+        <td><input type="text" size="50" id="txtLastname" /></td>
+      </tr>
+      <tr>
+        <td>Adresse</td>
+        <td><input type="text" size="50" id="txtAddress" /></td>
+      </tr>
+      <tr>
+        <td>Code Postal</td>
+        <td><input type="text" size="50" id="txtZipcode" /></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="text" size="50" id="txtMail" /></td>
+      </tr>
+      <tr>
+        <td><input type="hidden" id="hId" /></td>
+        <td>
+          <button type="button" onclick="updateForm()" id="btnUpdate">
+            Update
+          </button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

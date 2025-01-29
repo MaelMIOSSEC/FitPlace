@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Mon Projet">
+    <meta name="author" content="Nom Prénom">
+    <meta name="keywords" content="Projet, L1 ISI, Brest">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\css\Style.css" type="text/css">
+    <script src="JavaScript/Projet.js"></script>
+    <title>Ma 1ère page HTML !</title>
+</head>
+
+<body onload="displaySlide()">
+    <div id="global">
+        <div id="haut-de-page">
+            <div id="haut-gauche">
+                <img src="../img/Logo_image-removebg-preview.png" width="150px">
+            </div>
+            <h1 id="haut-droit">FitPlace</h1>
+        </div>
+        <div class="carousel-container">
+            <img src="../img/SlideA.jpg" alt="Image 1" class="carousel-img active" />
+            <img src="../img/SlideB.jpg" alt="Image 2" class="carousel-img" />
+            <img src="../img/SlideC.jpg" alt="Image 3" class="carousel-img" />
+            <div class="carousel-btn carousel-btn-1" onclick="changeImage(1)">1</div>
+            <div class="carousel-btn carousel-btn-2" onclick="changeImage(2)">2</div>
+            <div class="carousel-btn carousel-btn-3" onclick="changeImage(3)">3</div>
+        </div>
+
+    </div>
+    <hr>
+    <div id="navigation">
+        <ul id="navigation ul">
+            <li><button class="button">Accueil</button></li>
+            <li><button class="button" onclick="window.location.href = 'Exercices.html';">Exercices</button>
+            </li>
+            <li><button class="button" onclick="window.location.href ='Nutrition.html';">Nutrition</button>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+    <br>
+    <div id="container">
+        <div id="milieux-droit">
+            <U>
+                <h3>Qu'est ce que la musculation ?</h3>
+            </U>
+            <p>
+                La musculation, à proprement parler, voit le jour au 20ème siècle grâce à un homme.
+                Edmond Desbonnet à qui l'on doit la culture physique, telle qu'elle existe avec ses différents
+                exercices.
+                Personne avant lui n'avait songé à l'entrainement méthodique, ni à étudier les effets des exercices
+                musculaires localisés sur le corps. Edmond est à l'origine de ce que l'ont connait de la musculation
+                d'aujourd'hui
+                mais, en réalité, la Chine utilisais déjà, d'une façon ce sport sous la dynastie Chou. Pour entrer à
+                l'armée, le test consistait
+                à soulever des lourdes charges. Confucius, également, se serait entraîné selon le principe de la
+                resistance progressive.
+                Mais cette pratique a évoluer avec le temps jusuq'a aujourd'hui ou les gens peuvent en pratiquer
+                dans une salle de musculation,
+                dehors, dans un park de street. Elle a évoluer pour laisser naitre de nouveaux concepts comme le
+                street workout qui est un coté un peu "freestyle"
+                de la musculation, le bodybuilding avec ses compétitions, le crossfit ayant pour objectif
+                l'optimisation de la compétence physique du participant dans
+                chacun de dix domaines de conditionnement physique reconnus.
+            </p>
+        </div>
+        <div id="milieux-gauche">
+            <U>
+                <h3>Quels Objectifs possibles ?</h3>
+            </U>
+            <p>
+                Le monde de la musculation est un monde très vaste puisqu'il
+                offre la possibilité d'atteindre différents objectifs avec chacun une façon différente d'y parvenir
+                comme par exemple :
+            <ul>
+                <li>Une prise de masse</li>
+                <li>Une sèche musculaires</li>
+                <li>Une perte de poids</li>
+            </ul>
+            <br>
+            <br>
+            - En musculation, la prise de masse est une période pendant laquelle on va augmenter le volume du
+            muscle, ce qui se caractérise donc par une prise de poids.
+            L'objectif ici n'est pas seulement de prendre du muscle, mais aussi du poids. il faut donc ingérer plus
+            de kcal que ce que l'ont dépense
+            <br>
+            <br>
+            - Dans le milieu sportif, on appelle sèche la période alimentaire qui intervient après la prise de
+            masse.
+            Une fois le muscle développé, la sèche vise, via l'alimentation, à réduire le taux de masse grasse sans
+            entraîner de réduction de la masse musculaire.
+            Il faut baisser le nombres de kcal pour perde en gras mais pas en masse.
+            <br>
+            <br>
+            - Une perte de poids se produit lorsque la dépense en calories est supérieure aux calories absorbées
+            (ingérées et absorbées).
+            Il faut pour le pratiquant dépenser plus de kcal que ce qu'il ingère.
+            <br>
+            <br>
+            </p>
+        </div>
+    </div>
+    <div id="bas-de-page">
+        <U>
+            <h3>Pourquoi faire de la musculation ?</h3>
+        </U>
+        <p>
+            L’avantage premier de la musculation, c’est d’augmenter la masse musculaire, et par la même occasion, le
+            métabolisme. Qui dit plus de muscles, dit plus d’énergie à dépenser pour les faire fonctionner, dit plus
+            de calories dépensées au quotidien. Et ce, même quand vous ne vous exercez pas. L’augmentation de votre
+            masse musculaire et de votre métabolisme va également vous permettre de brûler plus de graisses, et
+            pendant plus longtemps. Vous continuerez à brûler des calories jusqu’à 72 heures après la fin de votre
+            entraînement !
+            Faire de la musculation vous aidera donc à augmenter votre masse musculaire et à réduire votre masse
+            adipeuse. Contrairement à la plupart des régimes hypocaloriques qui font fondre graisse et muscle. Avec
+            pour résultat, le fameux effet « skinny fat » : cet état où on a le poids désiré mais le corps manque
+            tellement de fermeté que le rendu visuel et esthétique ne vous convient pas.
+            Vous éviterez cela si vous vous appuyez sur la musculation pour mincir.
+        </p>
+    </div>
+    <script>
+        let sIndex = 0;
+        var images = document.querySelectorAll(".carousel-img");
+        var index = 0;
+
+        // Défilement automatique des images toutes les 2 secondes
+        setInterval(function () {
+            index = (index + 1) % images.length;
+            changeImage(index + 1);
+        }, 2000);
+
+        // Fonction pour changer l'image active
+        function changeImage(index) {
+            // Désactive toutes les images
+            images.forEach(function (image) {
+              image.classList.remove("active");
+            });
+
+            // Active l'image correspondant à l'index passé en paramètre
+            var image = images[index - 1];
+            image.classList.add("active");
+
+            // Met à jour l'index pour le défilement automatique
+            index = index - 1;
+        }
+
+        function showImage(n) {
+            sIndex = n;
+            displaySlide();
+        }
+
+        function previous() {
+            sIndex = sIndex - 1;
+            displaySlide();
+        }
+
+        function next() {
+            sIndex = sIndex + 1;
+            displaySlide();
+        }
+
+        function displaySlide() {
+            let i;
+            let slides = document.getElementsByClassName("slide1");
+
+            if (sIndex >= slides.length) {
+                sIndex = 0;
+            }
+
+            if (sIndex < 0) {
+                sIndex = slides.length - 1;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[sIndex].style.display = "block";
+        }
+    </script>
+    <br>
+    <br>
+    <div id="exo2">
+        <div class="slider1">
+            <div class="slides1">
+                <div class="slide1"><img src="../img/Slide1.jpg" alt="" /></div>
+                <div class="slide1"><img src="../img/Slide2.jpg" alt="" /></div>
+                <div class="slide1"><img src="../img/Slide3.jpg" alt="" /></div>
+            </div>
+        </div>
+        <br>
+        <div id="test">
+            <div id="control">
+                <button class="new"><img src="../img/previous.svg" style="width: 100%" onclick="previous()"></button>
+                <button class="newbutton"><img src="../img/Slide1.jpg" style="width: 100%" onclick="showImage(0)"></button>
+                <button class="newbutton"><img src="../img/Slide2.jpg" style="width: 100%" onclick="showImage(1)"></button>
+                <button class="newbutton"><img src="../img/Slide3.jpg" style="width: 100%" onclick="showImage(2)"></button>
+                <button><img src="../img/next.svg" style="width: 100%" onclick="next()"></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

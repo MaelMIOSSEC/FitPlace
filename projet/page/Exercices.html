@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Mon Projet">
+    <meta name="author" content="Nom Prénom">
+    <meta name="keywords" content="Projet, L1 ISI, Brest">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\css\Style.css" type="text/css">
+    <script src="JavaScript/Projet.js"></script>
+    <title>Ma 1ère page HTML !</title>
+</head>
+
+<body>
+    <div id="global">
+        <div id="haut-de-page">
+            <div id="haut-gauche">
+                <img src="../img/Logo_image-removebg-preview.png" width="150px">
+            </div>
+            <div id="haut-droit">
+                <h1>FitPlace</h1>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <img src="../img/SlideA.jpg" alt="Image 1" class="carousel-img active" />
+            <img src="../img/SlideB.jpg" alt="Image 2" class="carousel-img" />
+            <img src="../img/SlideC.jpg" alt="Image 3" class="carousel-img" />
+            <div class="carousel-btn carousel-btn-1" onclick="changeImage(1)">1</div>
+            <div class="carousel-btn carousel-btn-2" onclick="changeImage(2)">2</div>
+            <div class="carousel-btn carousel-btn-3" onclick="changeImage(3)">3</div>
+        </div>
+        <hr>
+        <div id="navigation">
+            <ul id="navigation ul">
+                <li><button class="button" onclick="window.location.href = 'index.html'">Accueil</button></li>
+                <li><button class="button">Exercices</button></li>
+                <li><button class="button" onclick="window.location.href ='../page/Nutrition.html';">Nutrition</button>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <br>
+        <U>
+            <h3>Les Exercices Principaux en Musculation </h3>
+        </U>
+        <center>
+            <p>(Cliquer sur l'image pour en savoir plus sur l'exercice)</p>
+        </center>
+        <table border="1">
+            <tr>
+                <div>
+                    <th id="gris">
+                        <center>
+                            <U>
+                                <h3>Le développé Couché</h3>
+                            </U>
+                        </center>
+                        <a href="https://www.espace-musculation.com/developpe-couche.html" target="_blank"><img class="image" src="../img/developpe-couche.gif" width="250px"></a>
+                    </th>
+                </div>
+                <td id="gris">
+                    <p id="paragraphe">
+                        Descendez la barre vers votre poitrine.
+                        Vos poignets doivent rester dans l'axe et votre dos ne doit pas être cambré.
+                        Maintenez vos pieds au sol pour être sûr de garder le dos bien plaqué au banc de musculation.
+                        En inspirant, descendez la barre vers votre buste puis remontez-la en soufflant,
+                        sans geste brusque.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th id="gris-clair">
+                    <center>
+                        <U>
+                            <h3>Le squat<h3>
+                        </U>
+                    </center>
+                    <a href="https://www.espace-musculation.com/definition-squat-methode-conseils.html" target="_blank"><img class="image" src="../img/squat-barre-devant-front.gif" width="250px"></a>
+                </th>
+                <td id="gris-clair">
+                    <p>
+                        Baissez la tête sous la barre et contractez vos épaules vers l'arrière avant de placer la barre
+                        dessus.
+                        Placez bien la barre sur vos trapèzes, un peu au-dessus de vos deltoïdes postérieurs.
+                        La barre devrait être solidement placée sur vos trapèzes et vos épaules.
+                        Cette position est appelée "squat barre haute".
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th id="gris">
+                    <center>
+                        <U>
+                            <h3>Le Soulevé de Terre<h3>
+                        </U>
+                    </center>
+                    <a href="https://www.espace-musculation.com/souleve-terre.html" target="_blank"><img class="image" src="../img/souleve-de-terre.gif" width="250px"></a>
+                </th>
+                <td id="gris">
+                    <p>
+                        Placer les pieds de la largeur des épaules et faire toucher la barre au niveau des tibias.
+                        Prendre la barre à deux mains à l'extérieur des genoux.
+                        Fléchir les jambes et garder le dos bien droit.
+                        Contracter les abdominaux et tous les muscles du corps en se redressant.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th id="gris-clair">
+                    <center>
+                        <U>
+                            <h3>Le Rowing à la Barre<h3>
+                        </U>
+                    </center>
+                    <a href="https://www.espace-musculation.com/rowing-barre.html" target="_blank"><img class="image" src="../img/rowing-barre.gif" width="250px"></a>
+                </th>
+                <td id="gris-clair">
+                    <p>
+                        Debout, les pieds espacés d'une largeur environ égale à celle des épaules,
+                        saisissez une barre au sol devant vous avec les mains écartées d'une largeur supérieure à celle
+                        des épaules et les paumes face au corps.
+                        Avec les bras tendues, revenez à la position verticale en faisant un soulevé de terre correct.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th id="gris">
+                    <center>
+                        <U>
+                            <h3>Les Tractions<h3>
+                        </U>
+                    </center>
+                    <a href="https://www.espace-musculation.com/conseil-traction-musculation.html" target="_blank"><img class="image" src="../img/traction-musculation-dos.gif" width="250px"></a>
+                </th>
+                <td id="gris">
+                    <p>
+                        Il faut soulever le corps en amenant la poitrine à la hauteur de la main.
+                        L'écart entre les deux paumes doit être équivalent à la largeur des épaules, et la prise doit
+                        être serrée.
+                        La traction en supination (Le dos des mains face à vous) fait travailler plusieurs muscles,
+                        à savoir les muscles dorsaux, les pectoraux, les trapèzes et les rhomboïdes.
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+          <div class="container">
+            <u>
+            <h2>Développé couché :</h2>
+            </u>
+            <div class="ball"></div>
+            <div class="bar"></div>
+            <div class="bar2"></div>
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="foot1"></div>
+            <div class="foot2"></div>
+            <div class="foot"></div>
+          </div>
+    </div>
+    <script>
+        var images = document.querySelectorAll(".carousel-img");
+        var index = 0;
+
+        // Défilement automatique des images toutes les 2 secondes
+        setInterval(function () {
+            index = (index + 1) % images.length;
+            changeImage(index + 1);
+        }, 2000);
+
+        // Fonction pour changer l'image active
+        function changeImage(index) {
+            // Désactive toutes les images
+            images.forEach(function (image) {
+              image.classList.remove("active");
+        });
+
+            // Active l'image correspondant à l'index passé en paramètre
+            var image = images[index - 1];
+            image.classList.add("active");
+
+            // Met à jour l'index pour le défilement automatique
+            index = index - 1;
+        }
+    </script>
+</body>
+
+</html>
